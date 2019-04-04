@@ -6,18 +6,21 @@
 #include <stdio.h>
 #include <math.h>
 
+#define SENTINEL 11
+
 // function prototype
 unsigned long calcFac(int val);
 
 // driver function
 int main() {
-    int table[9] = {0, 1, 2, 3, 6, 7, 8, 9, 10};
-    unsigned long factorials[9];
-
-    for(int i = 0; i < 9; i++) {
+    int table[12] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, SENTINEL};
+    unsigned long factorials[11];
+    int i = 0;
+    while(i != SENTINEL) {
         printf("\n%d: %d => ", i, table[i]);
         factorials[i] = calcFac(table[i]);
         printf("%lu", factorials[i]);
+        i++;
     }
 
     printf("\n");
